@@ -41,12 +41,19 @@ if (especializar == 2) {
   alert("Você decidiu se tornar Fullstack")
 }
 
-let tecnologias = prompt(
-  "Quais são as tecnologias você deseja se especializar ou conhecer?"
-)
+let decidiu = []
+let ok = true
 
-while (tecnologias == true) {
-  tecnologias = prompt(
-    "Tem mais alguma tecnologia que você gostaria de aprender?"
+while (ok) {
+  let tecnologias = prompt(
+    "Tem mais alguma tecnologia que você gostaria de aprender?(digite 'sair' para parar)"
   )
+  if (tecnologias.toLocaleLowerCase() === "sair") {
+    ok = false
+  } else {
+    alert(`${tecnologias} é realmente muito interessante! Continue estudando!`)
+    decidiu.push(tecnologias)
+  }
 }
+
+alert(`Essas são as tecnologias que você decidiu aprender: ${decidiu}`)
