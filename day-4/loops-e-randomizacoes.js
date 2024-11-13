@@ -1,20 +1,17 @@
 let numeroPensado = parseInt(Math.random() * 10) + 1
 console.log(numeroPensado)
-let chute = prompt("Qual número de 1 a 10 estou pensando?")
+let chute = prompt(
+  "Qual número de 1 a 10 estou pensando? Você tem 3 tentativas"
+)
 
-if (chute != numeroPensado) {
-  let tentativas = 2
-  while (tentativas > 0) {
-    let tentativaSingular = tentativas > 1 ? "tentativas" : "tentativa"
-    let maiorMenor = chute < numeroPensado ? "maior" : "menor"
-
-    alert(
-      `O número é ${maiorMenor} que o ${chute} e você ainda tem ${tentativas} ${tentativaSingular}`
-    )
-    chute = prompt("Tente outro número")
-    tentativas--
+for (let tentativas = 1; tentativas < 3; tentativas++) {
+  if (chute == numeroPensado) {
+    alert(`Você acertou o número!`)
+    break
   }
-} else {
-  alert("Você acertou o número!")
+
+  let maiorMenor = chute < numeroPensado ? "maior" : "menor"
+  alert(`O número é ${maiorMenor} que o ${chute}`)
+  chute = prompt("Tente outro número")
 }
-alert(`Que pena, o número correto é ${numeroPensado}`)
+alert(`O número correto é ${numeroPensado}`)
