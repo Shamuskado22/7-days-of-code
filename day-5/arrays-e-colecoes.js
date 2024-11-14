@@ -13,19 +13,19 @@ while (adicionar === "sim") {
     break
   }
 
-  let alimento = prompt("Qual alimento quer adicionar?")
+  let item = prompt("Qual item quer adicionar?")
   let categoria = prompt(
     "Escolha o número de acordo com a categoria disponível:\n1. Frutas\n2. Laticínios\n3. Congelados\n4. Doces"
   )
 
   if (categoria == 1) {
-    frutas.push(alimento)
+    frutas.push(item)
   } else if (categoria == 2) {
-    laticinios.push(alimento)
+    laticinios.push(item)
   } else if (categoria == 3) {
-    congelados.push(alimento)
+    congelados.push(item)
   } else if (categoria == 4) {
-    doces.push(alimento)
+    doces.push(item)
   } else {
     alert("Categoria não pré-definida")
   }
