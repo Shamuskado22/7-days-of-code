@@ -29,6 +29,36 @@ while (adicionar === "sim") {
   } else {
     alert("Categoria não pré-definida")
   }
+  // Criar opção de remover algum item da lista perguntando se deseja remover
+  let remover = prompt(
+    "Deseja remover algum item da lista? \nDigite 'sim' para confirmar ou cancele para sair"
+  )
+
+  // Se a pessoa dizer que sim
+  if (remover === "sim") {
+    // Criar prompt para dizer qual item deseja remover
+    // Imprimir os itens da lista atual
+    remover = prompt(`Qual item deseja remover?\n
+    Frutas: ${frutas}\n
+    Laticínios: ${laticinios}\n
+    Congelados: ${congelados}\n
+    Doces: ${doces}`)
+  }
+
+  // Depois disso irá remover o item da lista
+
+  // E imprimir a confirmação de que foi removido
+
+  // Se o item escolhido não for encontrado
+  if (
+    !frutas.includes(remover) ||
+    !laticinios.includes(remover) ||
+    !congelados.includes(remover) ||
+    !doces.includes(remover)
+  ) {
+    // Exibir mensagem de erro
+    alert("Item não encontrado")
+  }
 }
 
 alert(`Lista de compras:\n
