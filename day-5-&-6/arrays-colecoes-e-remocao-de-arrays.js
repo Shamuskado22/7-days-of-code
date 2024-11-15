@@ -37,27 +37,32 @@ while (adicionar === "sim") {
   // Se a pessoa dizer que sim
   if (remover === "sim") {
     // Criar prompt para dizer qual item deseja remover
-    // Imprimir os itens da lista atual
+    // Imprimir os itens atualmente na lista
     remover = prompt(`Qual item deseja remover?\n
     Frutas: ${frutas}\n
     Laticínios: ${laticinios}\n
     Congelados: ${congelados}\n
     Doces: ${doces}`)
-  }
 
-  // Depois disso irá remover o item da lista
-
-  // E imprimir a confirmação de que foi removido
-
-  // Se o item escolhido não for encontrado
-  if (
-    !frutas.includes(remover) ||
-    !laticinios.includes(remover) ||
-    !congelados.includes(remover) ||
-    !doces.includes(remover)
-  ) {
-    // Exibir mensagem de erro
-    alert("Item não encontrado")
+    // Depois disso irá remover o item da lista
+    if (frutas.indexOf(remover) != -1) {
+      frutas.splice(frutas.indexOf(remover), 1)
+      // E imprimir a confirmação de que foi removido
+      alert(`O item '${remover}' foi removido`)
+    } else if (laticinios.indexOf(remover) != -1) {
+      laticinios.splice(frutas.indexOf(remover), 1)
+      alert(`O item '${remover}' foi removido`)
+    } else if (congelados.indexOf(remover) != -1) {
+      congelados.splice(congelados.indexOf(remover), 1)
+      alert(`O item '${remover}' foi removido`)
+    } else if (doces.indexOf(remover) != -1) {
+      doces.splice(doces.indexOf(remover), 1)
+      alert(`O item '${remover}' foi removido`)
+      // Se o item escolhido não for encontrado
+    } else {
+      // Exibir mensagem de erro
+      alert(`O item ${remover} não está na lista`)
+    }
   }
 }
 
