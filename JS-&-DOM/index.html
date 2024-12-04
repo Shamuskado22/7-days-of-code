@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Cadastro</title>
+</head>
+<body>
+  <h1>Casdastro de pessoas</h1>
+  <form action="" class="form js-form">
+    <label for="name">
+      Nome:
+      <input type="text" name="name" required maxlength="120" id="name" class="form-field js-field">
+    </label>
+    <label for="birth-date">
+      Data de Nascimento:
+      <input type="date" name="birth-date" required id="birth-date" class="form-field js-field">
+      <button id="salvarDados" type="submit">Salvar</button>
+      <input type="reset" value="Limpar">
+    </label>
+  </form>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>
