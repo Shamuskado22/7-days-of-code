@@ -3,22 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    label {
+      display: block;
+      padding-bottom: 0.6rem;
+    }
+
+    button {
+      /* display: inline-block; */
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100vw;
+      text-align: left;
+    }
+
+    th {
+      padding: 0.8rem 0.5rem;
+    }
+
+    td {
+      border: 1px solid lightgray;
+      padding: 0.5rem 0.8rem ;
+    }
+  </style>
   <title>Página de Cadastro</title>
 </head>
 <body>
   <h1>Casdastro de pessoas</h1>
-  <form action="" class="form js-form">
+  <form action="" method="get" class="form js-form">
     <label for="name">
       Nome:
-      <input type="text" name="name" required minlength="3" maxlength="120" id="name" class="form-field js-field">
+      <input type="text" name="name" required autocomplete="1" minlength="3" maxlength="120" id="name" class="form-field js-field">
     </label>
     <label for="birth-date">
       Data de Nascimento:
       <input type="date" name="birth-date" required id="birth-date" class="form-field js-field">
-      <button id="salvarDados" type="submit">Salvar</button>
-      <input type="reset" value="Limpar">
     </label>
+    <button id="salvarDados" >Salvar</button>
+    <input type="reset" value="Limpar">
   </form>
+  <table id="dataTable">
+    <th>Pessoas</th>
+    <th>Data de Nascimento</th>
+  </table>
 
   <script src="./js/app.js"></script>
 </body>
