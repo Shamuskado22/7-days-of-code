@@ -66,22 +66,31 @@ const loadData = () => {
   if (data && Array.isArray(data)) {
     data.forEach(item => {
       const newRow = document.createElement('tr');
+      const editButton = document.createElement('td');
+      const editBtn = document.createElement('button');
+
+      editBtn.textContent = 'Editar';
+      editBtn.addEventListener('click', () => {
+        // editRow(rowIndex)
+        // criar inputs do tipo text
+        // criar um botão com valor Salvar
+        // Pegar o valor dos td e passar para um input
+        // deixar os td com display: none;
+        // e deixar o botão editar com display: none;
+        // criar eventlistener para o botão salvar
+          // atualizar no localstorage os dados
+          // e atualizar na tabela
+          // Quando clicar em salvar reverter todos os processos anteriores
+      });
       Object.keys(item).forEach(key => {
         const newCell = document.createElement('td');
-        const editButton = document.createElement('td');
-        const editBtn = document.createElement('button');
-
-        editBtn.textContent = 'Editar';
-        editBtn.addEventListener('click', () => {
-          editRow(rowIndex)
-        });
 
         newCell.textContent = item[key];
         newRow.appendChild(newCell);
-        editButton.appendChild(editBtn);
-        newRow.appendChild(editButton);
       });
-
+      
+      editButton.appendChild(editBtn);
+      newRow.appendChild(editButton);
       table.appendChild(newRow);
     });
   };

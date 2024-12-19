@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 label {
   display: block;
   padding-bottom: 0.6rem;
@@ -22,3 +28,10 @@ td {
   padding: 0.5rem 0.8rem;
 }
 
+td:last-child {
+  text-align: center;
+}
+
+button {
+  padding: 0.4rem;
+}
