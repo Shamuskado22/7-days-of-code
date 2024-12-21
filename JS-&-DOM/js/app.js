@@ -20,11 +20,16 @@ saveData.addEventListener('click',
       alert('Campo de data precisa ser preenchido');
       return false;
     };
-
+    
     // A data de nascimento precisa estar no formato DD/MM/AAAA
     date = new Date(birthDate);
     month = date.getMonth() + 1;
     formattedDate = date.toLocaleDateString('pt-BR', { timeZone: 'UTC' });
+
+    if (!/^(\d{2})\/(\d{2})\/(\d{4})$/.test(date)) {
+      alert('Ano deve conter até 4 dígitos');
+      return false;
+    }
 
     // O mês informado deve estar entre 01 e 12
     if (month < 1) {
@@ -69,33 +74,37 @@ const loadData = () => {
       const editTd = document.createElement('td');
       const editButton = document.createElement('button');
       const saveButton = document.createElement('button');
-
+      const deleteTd = document.createElement('td')
+      const deleteButton = document.createElement('button')
+      
+      // criar um botão com valor Editar
       editButton.textContent = 'Editar';
+      // criar um botão com valor Salvar
+      saveButton.textContent = 'Salvar';
+      // criar um botão com valor Remover
+      deleteButton.textContent = 'Remover';
       Object.keys(item).forEach(key => {
         const newCell = document.createElement('td');
 
         newCell.textContent = item[key];
         newRow.appendChild(newCell);
         editButton.addEventListener('click', () => {
+          // cria um index para cada linha
+          const dataIndex = newRow.dataset.index;
           // criar inputs do tipo text
           const input = document.createElement('input');
-          // editRow(rowIndex)
           input.setAttribute('class', 'data');
           // Pegar o valor dos td e passar para um input
           input.value = newCell.textContent;
           // deixar os td vazios
           newCell.textContent = ''
           newCell.appendChild(input);
-          // criar um botão com valor Salvar
-          saveButton.textContent = 'Salvar';
           editTd.appendChild(saveButton);
           // e deixar o botão editar com display: none;
           editButton.classList.add('hidden')
           // criar eventlistener para o botão salvar
           saveButton.addEventListener('click', () => {
             const newData = input.value;
-            const dataIndex = newRow.dataset.index;
-
             // Atualiza o array data
             data[dataIndex][key] = newData;
             // atualizar na tabela
@@ -110,10 +119,21 @@ const loadData = () => {
           saveButton.classList.remove('hidden')
         });
       });
+      deleteButton.addEventListener('click', () => {
+        const rowIndex = newRow.dataset.index;
+
+        if (confirm('Tem certeza que deseja remover a linha?')) {
+          table.deleteRow(rowIndex);
+          data.splice(rowIndex, 1);
+          localStorage.setItem('data', JSON.stringify(data));
+        }
+        window.location.reload()
+      });
       newRow.dataset.index = index;
       newRow.appendChild(editTd);
       editTd.appendChild(editButton);
-      
+      newRow.appendChild(deleteTd);
+      deleteTd.appendChild(deleteButton);
       table.appendChild(newRow);
     });
   };
