@@ -64,39 +64,55 @@ const addRowToTable = (fullName, birthDate) => {
 //  E exibi-los em uma tabela.
 const loadData = () => {
   if (data && Array.isArray(data)) {
-    data.forEach(item => {
+    data.forEach((item, index) => {
       const newRow = document.createElement('tr');
-      const editButton = document.createElement('td');
-      const editBtn = document.createElement('button');
+      const editTd = document.createElement('td');
+      const editButton = document.createElement('button');
       const saveButton = document.createElement('button');
 
-      editBtn.textContent = 'Editar';
+      editButton.textContent = 'Editar';
       Object.keys(item).forEach(key => {
         const newCell = document.createElement('td');
-        
+
         newCell.textContent = item[key];
         newRow.appendChild(newCell);
-        editBtn.addEventListener('click', () => {
-          // editRow(rowIndex)
+        editButton.addEventListener('click', () => {
           // criar inputs do tipo text
-          const input = document.createElement('input')
+          const input = document.createElement('input');
+          // editRow(rowIndex)
+          input.setAttribute('class', 'data');
           // Pegar o valor dos td e passar para um input
-          input.value = newCell.textContent
-          newCell.appendChild(input)
+          input.value = newCell.textContent;
+          // deixar os td vazios
+          newCell.textContent = ''
+          newCell.appendChild(input);
           // criar um botão com valor Salvar
           saveButton.textContent = 'Salvar';
-          editButton.appendChild(saveButton);
-
-          // deixar os td com display: none;
+          editTd.appendChild(saveButton);
           // e deixar o botão editar com display: none;
+          editButton.classList.add('hidden')
           // criar eventlistener para o botão salvar
-            // atualizar no localstorage os dados
-            // e atualizar na tabela
+          saveButton.addEventListener('click', () => {
+            const newData = input.value;
+            const dataIndex = newRow.dataset.index;
+
+            // Atualiza o array data
+            data[dataIndex][key] = newData;
+            // atualizar na tabela
+            newCell.textContent = input.value;
             // Quando clicar em salvar reverter todos os processos anteriores
+            input.style.display = 'none';
+            editButton.classList.remove('hidden');
+            saveButton.classList.add('hidden');
+            // atualizar no localstorage os dados
+            localStorage.setItem('data', JSON.stringify(data));
+          });
+          saveButton.classList.remove('hidden')
         });
       });
-      newRow.appendChild(editButton);
-      editButton.appendChild(editBtn);
+      newRow.dataset.index = index;
+      newRow.appendChild(editTd);
+      editTd.appendChild(editButton);
       
       table.appendChild(newRow);
     });
