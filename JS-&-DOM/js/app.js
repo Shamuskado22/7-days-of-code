@@ -1,7 +1,8 @@
-const saveData = document.querySelector('#salvarDados');
+const nameMessage = document.querySelector('#nMessage');
+const bDMessage = document.querySelector('#bDMessage')
+const saveData = document.querySelector('#saveData');
 const table = document.querySelector('#dataTable');
 const data = JSON.parse(localStorage.getItem('data')) || [];
-
 
 // Vincular uma função ao evento de submissão do formulário
 saveData.addEventListener('click',
@@ -9,25 +10,27 @@ saveData.addEventListener('click',
     fullName = document.querySelector('#name').value;
     birthDate = document.querySelector('#birth-date').value;
 
-    // Um nome precisa ter somente letras e espaços, no mínimo 3 e no máximo 120 letras
+    // Teste com RegEx o campo de Nome Completo
     if (!/^[a-zA-Z ]{3,120}$/.test(fullName)) {
-      alert('O nome só pode conter letras e espaços e caracteres entre 3 e 120 letras.');
+      const errMessage = 'O nome só pode conter letras, espaços e caracteres entre 3 e 120 letras.';
+      nameMessage.innerHTML = errMessage
       return false;
     };
 
     // Se o campo de data de nascimento estiver vazia
     if (birthDate === "") {
-      alert('Campo de data precisa ser preenchido');
+      const errMessage = 'Campo de data precisa ser preenchido';
+      bDMessage.innerHTML = errMessage
       return false;
     };
-    
+
     // A data de nascimento precisa estar no formato DD/MM/AAAA
     date = new Date(birthDate);
     month = date.getMonth() + 1;
     formattedDate = date.toLocaleDateString('pt-BR', { timeZone: 'UTC' });
 
     if (!/^(\d{2})\/(\d{2})\/(\d{4})$/.test(date)) {
-      alert('Ano deve conter até 4 dígitos');
+      alert('A data deve estar no formato DD/MM/AAAA');
       return false;
     }
 
@@ -39,7 +42,7 @@ saveData.addEventListener('click',
     };
 
     // A função vinculada deverá pegar o valor informado nos campos nome e data de nascimento e imprimi-los no console
-    console.log(`Nome: ${fullName} \nData de Nascimento: ${formattedDate}`);
+    // console.log(`Nome: ${fullName} \nData de Nascimento: ${formattedDate}`);
 
     // Chama a função criando uma nova linha a tabela
     addRowToTable(fullName, formattedDate);
@@ -66,7 +69,7 @@ const addRowToTable = (fullName, birthDate) => {
   });
 };
 
-//  E exibi-los em uma tabela.
+//  E os exibe em uma tabela.
 const loadData = () => {
   if (data && Array.isArray(data)) {
     data.forEach((item, index) => {
@@ -76,13 +79,16 @@ const loadData = () => {
       const saveButton = document.createElement('button');
       const deleteTd = document.createElement('td')
       const deleteButton = document.createElement('button')
-      
+
       // criar um botão com valor Editar
       editButton.textContent = 'Editar';
+      editButton.setAttribute('class', 'edit-button')
       // criar um botão com valor Salvar
       saveButton.textContent = 'Salvar';
+      saveButton.setAttribute('class', 'save-button')
       // criar um botão com valor Remover
       deleteButton.textContent = 'Remover';
+      deleteButton.setAttribute('class', 'delete-button')
       Object.keys(item).forEach(key => {
         const newCell = document.createElement('td');
 
@@ -116,7 +122,7 @@ const loadData = () => {
             // atualizar no localstorage os dados
             localStorage.setItem('data', JSON.stringify(data));
           });
-          saveButton.classList.remove('hidden')
+          saveButton.classList.remove('hidden');
         });
       });
       deleteButton.addEventListener('click', () => {
@@ -127,7 +133,7 @@ const loadData = () => {
           data.splice(rowIndex, 1);
           localStorage.setItem('data', JSON.stringify(data));
         }
-        window.location.reload()
+        window.location.reload();
       });
       newRow.dataset.index = index;
       newRow.appendChild(editTd);

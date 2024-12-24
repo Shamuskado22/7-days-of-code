@@ -7,25 +7,41 @@
   <title>Página de Cadastro</title>
 </head>
 <body>
-  <h1>Casdastro de pessoas</h1>
-  <form action="" method="get" class="form js-form">
-    <label for="name">
-      Nome Completo:
-      <input type="text" name="name" required autocomplete="1" minlength="3" maxlength="120" id="name" class="form-field js-field">
-    </label>
-    <label for="birth-date">
-      Data de Nascimento:
-      <input type="date" name="birth-date" required id="birth-date" class="form-field js-field">
-    </label>
-    <button id="salvarDados" >Salvar</button>
-    <button type="reset">Limpar</button>
-  </form>
-  <table id="dataTable">
-    <th>Pessoas</th>
-    <th>Data de Nascimento</th>
-    <th>Editar / Salvar</th>
-    <th>Remover</th>
-  </table>
+  <header>
+    <h1>Casdastro de pessoas</h1>
+  </header>
+
+  <main>
+    <form action="" method="get" class="form js-form">
+      <label for="name">
+        <p class="label-name">Nome Completo (<span>campo obrigatório</span>)</p>
+        <input type="text" name="name" required autocomplete="1" id="name" class="form-field js-field" placeholder="Digite o nome completo da pessoa, Ex.: Samuel Almeida">
+        <p class="err-message" id="nMessage"></p>
+      </label>
+      <label for="birth-date">
+        <p class="label-name">Data de Nascimento (<span>campo obrigatório</span>)</p>
+        <input type="date" name="birth-date" required id="birth-date" class="form-field js-field" >
+        <p class="err-message" id="bDMessage"></p>
+      </label>
+      <div class="buttons">
+        <button id="saveData" >Salvar</button>
+        <button type="reset">Limpar</button>
+      </div>
+    </form>
+
+    <table id="dataTable">
+      <th>Pessoas</th>
+      <th>Data de Nascimento</th>
+      <th>Editar / Salvar</th>
+      <th>Remover</th>
+    </table>
+  </main>
+
+  <footer>
+    <p>
+      &copy; 2024. Todos os direitos reservados. Desenvolvido por <a href="https://github.com/Shamuskado22" target="_blank" rel="noopener noreferrer">Samuel Almeida</a>
+    </p>
+  </footer>
 
   <script src="./js/app.js"></script>
 </body>
