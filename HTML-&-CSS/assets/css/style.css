@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+  --logo-color:#3A404E;
+  --sign-up-button: #8E2424;
+  --text-color: #667085;
+  --heading-color: #101828;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  list-style: none;
+}
+
+nav {
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+nav, 
+.nav__logo, 
+.navbar, 
+.nav__buttons {
+  display: flex;
+}
+
+.nav__logo {
+  color: var(--logo-color);
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav__logo p {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.navbar {
+  align-items: center;
+}
+
+.navbar {
+  gap: 2.5rem;
+  font-size: 1rem;
+  align-items: center;
+}
+
+.navbar a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.nav__buttons {
+  gap: 0.75rem;
+}
+
+.nav__buttons button {
+  width: 5.188rem;
+  height: 2.75rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.5rem;
+  color: var(--text-color);
+  background-color: #FFF;
+  cursor: pointer;
+}
+
+button.sign-up__button {
+  width: 7rem;
+  color: #FFF;
+  background-color: var(--sign-up-button);
+}
+
+header {
+  padding: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+header span {
+  color: var(--sign-up-button);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+header h1 {
+  color: var(--heading-color);
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: -0.02rem;
+}
+
+header p {
+  color: var(--text-color);
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+}
+
+section.metrics {
+  padding: 0 2rem 6rem;
+  display: flex;
+  gap: 4rem;
+}
+
+.metrics .metric__item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.metric__item h2 {
+  color: var(--sign-up-button);
+  font-size: 3.75rem;
+  font-weight: 600;
+  line-height: 4.5rem;
+  letter-spacing: -0.02rem;
+}
+
+.metric__item .item__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.item__info h3 {
+  color: var(--heading-color);
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.75rem;
+}
+
+.item__info p {
+  color: var(--text-color);
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
