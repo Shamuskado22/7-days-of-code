@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
-  --logo-color:#3A404E;
+  --logo-color: #3A404E;
   --sign-up-button: #8E2424;
   --text-color: #667085;
   --heading-color: #101828;
+  --span-bg: #8e24240d;
+  --offer-bd: #EAECF0;
 }
 
 * {
@@ -15,18 +17,14 @@
   list-style: none;
 }
 
-body {
-  padding: 0 4rem;
-}
-
 nav {
   justify-content: space-between;
   padding: 2rem;
 }
 
-nav, 
-.nav__logo, 
-.navbar, 
+nav,
+.nav__logo,
+.navbar,
 .nav__buttons {
   display: flex;
 }
@@ -107,7 +105,7 @@ header p {
 }
 
 section.metrics {
-  padding: 0 2rem 6rem;
+  padding: 6rem;
   display: flex;
   gap: 4rem;
 }
@@ -143,4 +141,105 @@ section.metrics {
   color: var(--text-color);
   font-size: 1rem;
   line-height: 1.5rem;
+}
+
+.offers {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 6rem;
+}
+
+.talents {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.talents .heading__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.heading__text .heading__badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.heading__badge span {
+  width: 7.813rem;
+  background-color: var(--span-bg);
+  color: var(--sign-up-button);
+  font-size: 0.8em;
+  font-weight: 500;
+  line-height: 1.25rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+}
+
+.heading__badge h2 {
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 2.75rem;
+  letter-spacing: -0.1rem;
+  color: var(--heading-color);
+}
+
+.heading__text p {
+  font-size: 1.25rem;
+  line-height: 1.875rem;
+  color: var(--text-color);
+}
+
+.talents img {
+  width: 100%;
+}
+
+.open__offers {
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  gap: 4rem;
+}
+
+.open__offers .job {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.job h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.875rem;
+  color: var(--heading-color);
+}
+
+.job .offer {
+  border: 1px solid var(--offer-bd);
+  border-radius: 1rem;
+  padding: 1.5rem 1.5rem 1.75rem;
+}
+
+.offer h4 {
+  margin-bottom: 2rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 1.75rem;
+  color: var(--heading-color);
+}
+
+.offer span {
+  margin-right: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  color: var(--text-color);
 }
