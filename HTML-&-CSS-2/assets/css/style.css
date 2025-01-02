@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-text: #FFFFFFE5;
+  --secundary-text: #FFFFFF99;
+  --primary: #70B5F9;
+  --card-bg: #1B2226;
+  --dark-text: #000000BF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  color: var(--primary-text);
+}
+
+body {
+  background-color: #000;
+}
+
+main {
+  margin-left: 9.625rem;
+}
+
+section.profile-info {
+  background-color: var(--card-bg);
+  border-radius: 1rem;
+}
+
+.profile-info .profile-bg-img {
+  height: 14.375rem;
+  background: url(../images/profile-bg-img.png) no-repeat center left / cover;
+}
+
+.profile-info .profile-img {
+  position: absolute;
+  top: 7.375rem;
+  margin-left: 1.5rem;
+}
+
+.profile-info .personal-info {
+  padding: 3.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+
+}
+
+.personal-info h1 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.875rem;
+}
+
+.personal-info h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.875rem;
+}
+
+.personal-info .talk-about, 
+.personal-info .locale {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: 0.875rem;
+  line-height: 1.875rem;
+  color: var(--secundary-text);
+}
+
+.locale img, 
+.connections img {
+  border-radius: 50%;
+  width: 2px;
+  height: 2px;
+}
+
+.locale span {
+  cursor: pointer;
+}
+
+.locale span, 
+.connections span {
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.25rem;
+  color: var(--primary);
+}
+
+.personal-info .connections {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+.connections span {
+  font-weight: 500;
+}
+
+.personal-info .profile-actions {
+  display: flex;
+  gap: 0.438rem;
+}
+
+.profile-actions button {
+  border-radius: 1rem;
+  cursor: pointer;
+  background-color: var(--primary);
+  padding: 0.375rem 1.813rem;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  color: var(--dark-text);
+}
+
+.profile-actions .more {
+  background-color: transparent;
+  padding: 0.375rem 3rem;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+.personal-info .career-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: absolute;
+  left: 75%;
+}
+
+.career-details .company, 
+.career-details .institution {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+}
