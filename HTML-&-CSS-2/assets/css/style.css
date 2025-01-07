@@ -17,14 +17,22 @@
   color: var(--primary-text);
 }
 
+body {
+  background-color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 header {
-  width: 100vw;
+  width: 100%;
   background-color: var(--card-bg);
   margin-bottom: 1.5rem;
-  padding: 0.563rem 9.625rem;
+  padding: 0.563rem;
+  /* padding: 0.563rem 12.5rem; */
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   gap: 0.5rem;
 }
 
@@ -93,12 +101,8 @@ header .navbar {
   padding-left: 0.5rem;
 }
 
-body {
-  background-color: #000;
-}
-
 main {
-  margin-left: 9.625rem;
+  width: 81.2vw;
 }
 
 section.profile-info {
@@ -119,12 +123,34 @@ section.profile-info {
   margin-left: 1.5rem;
 }
 
+.profile-info .career-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  position: absolute;
+  top: 65%;
+  margin-left: 33rem;
+}
+
+.career-details .company,
+.career-details .institution {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.company h2,
+.institution h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+}
+
 .profile-info .personal-info {
   padding: 3.5rem 1.5rem 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-
 }
 
 .personal-info h1 {
@@ -147,13 +173,6 @@ section.profile-info {
   font-size: 0.875rem;
   line-height: 1.875rem;
   color: var(--secundary-text);
-}
-
-.locale img,
-.connections img {
-  border-radius: 50%;
-  width: 2px;
-  height: 2px;
 }
 
 .locale span {
@@ -200,23 +219,6 @@ section.profile-info {
   padding: 0.375rem 3rem;
   border: 1px solid var(--primary);
   color: var(--primary);
-}
-
-.personal-info .career-details {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  position: absolute;
-  left: 75%;
-}
-
-.career-details .company,
-.career-details .institution {
-  display: flex;
-  gap: 0.5rem;
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1.25rem;
 }
 
 section.highlight-posts {
@@ -266,7 +268,7 @@ section.highlight-posts {
   width: 100%;
 }
 
-.post .reactions__comments {
+.reactions__comments {
   padding: 0 0.25rem;
   display: flex;
   justify-content: space-between;
@@ -278,8 +280,102 @@ section.highlight-posts {
   gap: 0.25rem;
 }
 
-.reactions p, .reactions__comments .comments {
+.reactions p,
+.reactions__comments .comments {
   font-size: 0.75rem;
   line-height: 1.25rem;
   color: var(--secundary-text);
+}
+
+section.activities {
+  background-color: var(--card-bg);
+  padding: 10px 24px 0;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.activities h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.875rem;
+  color: var(--primary-text);
+}
+
+.activities .followers {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  color: var(--primary);
+  margin-bottom: 0.875rem;
+}
+
+.activities .activity {
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--secundary-text);
+}
+
+.activity .posted-by,
+.activity .post {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.activity .posted-by {
+  gap: 0.25rem;
+}
+
+.activity .posted-by p {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--secundary-text);
+}
+
+.activity .post img {
+  width: 4rem;
+  height: 4rem;
+}
+
+.activity .post .post-text {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #FFF;
+}
+
+.activities .all-activities {
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.all-activities p {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+  color: var(--secundary-text);
+  cursor: pointer;
+}
+
+section.about {
+  background-color: var(--card-bg);
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.about h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.875rem;
+  color: var(--primary-text);
+}
+
+.about p {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #FFF;
 }
