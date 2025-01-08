@@ -29,7 +29,6 @@ header {
   background-color: var(--card-bg);
   margin-bottom: 1.5rem;
   padding: 0.563rem;
-  /* padding: 0.563rem 12.5rem; */
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -137,6 +136,11 @@ section.profile-info {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.career-details .company img,
+.career-details .institution img {
+  width: 2rem;
 }
 
 .company h2,
@@ -289,7 +293,7 @@ section.highlight-posts {
 
 section.activities {
   background-color: var(--card-bg);
-  padding: 10px 24px 0;
+  padding: 0.625rem 1.5rem 0;
   border-radius: 1rem;
   margin-bottom: 0.5rem;
 }
@@ -345,14 +349,15 @@ section.activities {
 }
 
 .activities .all-activities {
-  padding: 0.5rem;
+  padding: 0.5rem 0;
   text-align: center;
 }
 
-.all-activities p {
+.all-activities a {
   font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.25rem;
+  text-decoration: none;
   color: var(--secundary-text);
   cursor: pointer;
 }
@@ -378,4 +383,87 @@ section.about {
   font-size: 0.875rem;
   line-height: 1.25rem;
   color: #FFF;
+}
+
+section.experiences {
+  background-color: var(--card-bg);
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.experiences h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.875rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-text);
+}
+
+.experiences .company {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.125rem;
+}
+
+.experiences .company img {
+  width: 3rem;
+}
+
+.company h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  color: var(--primary-text);
+}
+
+.company p {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: var(--secundary-text);
+}
+
+.experiences .positions {
+  margin-left: 2.5rem;
+}
+
+.positions .position {
+  margin-bottom: 0.25rem;
+}
+
+.positions .position::marker {
+  width: 0.563rem;
+  color: #D9D9D9;
+}
+
+.position h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  color: var(--primary-text);
+}
+
+.position .for-border {
+  margin-left: -0.938rem;
+  padding-left: 0.938rem;
+  border-left: 1px solid var(--secundary-text);
+}
+
+.position .job-type,
+.position .time-spent,
+.position .locale {
+  display: flex;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: var(--secundary-text);
+}
+
+.position .job-type {
+  color: var(--primary-text);
+}
+
+.position .locale {
+  line-height: 1.25rem;
 }
