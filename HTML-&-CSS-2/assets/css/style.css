@@ -81,7 +81,6 @@ header .navbar {
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 0.875rem;
-  color: var(--primary-text);
   cursor: pointer;
   transition: color 0.2s ease-in;
 }
@@ -238,7 +237,6 @@ section.highlight-posts {
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.875rem;
-  color: var(--primary-text);
 }
 
 .highlight-posts .posts {
@@ -265,7 +263,6 @@ section.highlight-posts {
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1.25rem;
-  color: var(--primary-text);
 }
 
 .post img {
@@ -302,7 +299,6 @@ section.activities {
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.875rem;
-  color: var(--primary-text);
 }
 
 .activities .followers {
@@ -376,7 +372,6 @@ section.about {
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.875rem;
-  color: var(--primary-text);
 }
 
 .about p {
@@ -397,7 +392,6 @@ section.experiences {
   font-weight: 600;
   line-height: 1.875rem;
   margin-bottom: 0.5rem;
-  color: var(--primary-text);
 }
 
 .experiences .company {
@@ -415,7 +409,6 @@ section.experiences {
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.25rem;
-  color: var(--primary-text);
 }
 
 .company p {
@@ -441,7 +434,6 @@ section.experiences {
   font-size: 1rem;
   font-weight: 600;
   line-height: 1.25rem;
-  color: var(--primary-text);
 }
 
 .position .for-border {
@@ -466,4 +458,84 @@ section.experiences {
 
 .position .locale {
   line-height: 1.25rem;
+}
+
+section.qualification {
+  background-color: var(--card-bg);
+  padding: 0.5rem 1.5rem 1.5rem;
+  border-radius: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.qualification h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.875rem;
+}
+
+.qualification .institution {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.qualification .institution img {
+  width: 3rem;
+  height: 3rem;
+}
+
+.institution__course__duration h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+}
+
+.institution__course__duration p {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.institution__course__duration span {
+  font-size: 0.875rem;
+  line-height: 1rem;
+  color: var(--secundary-text);
+}
+
+section.languages {
+  background-color: var(--card-bg);
+  padding: 1rem 3.625rem 0.01rem 1.5rem;
+  border-radius: 1rem;
+  margin-bottom: 3.75rem;
+}
+
+.languages h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.875rem;
+  margin-bottom: 0.5rem;
+}
+
+.languages .language {
+  border-bottom: 1px solid var(--secundary-text);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.languages :last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.language h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.875rem;
+  color: #FFF;
+}
+
+.language span {
+  font-size: 0.875rem;
+  line-height: 1.875rem;
+  color: var(--secundary-text);
 }
