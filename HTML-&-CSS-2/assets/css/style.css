@@ -25,7 +25,7 @@ body {
 }
 
 header {
-  width: 100%;
+  width: 100vw;
   background-color: var(--card-bg);
   margin-bottom: 1.5rem;
   padding: 0.563rem;
@@ -100,7 +100,10 @@ header .navbar {
 }
 
 main {
-  width: 81.2vw;
+  width: 780px;
+  margin-left: -300px;
+  display: flex;
+  flex-direction: column;
 }
 
 section.profile-info {
@@ -538,4 +541,70 @@ section.languages {
   font-size: 0.875rem;
   line-height: 1.875rem;
   color: var(--secundary-text);
+}
+
+.side-cards {
+  position: absolute;
+  margin-left: 50.625rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+aside.side-card {
+  background-color: var(--card-bg);
+  width: 20rem;
+  border-radius: 1rem;
+  padding: 1rem 1.25rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.side-card h2 {
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+
+.side-card .user {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.user .img__text {
+  display: flex;
+  gap: 0.375rem;
+}
+
+.img__text img {
+  height: 3rem;
+}
+
+.img__text .text h3 {
+  font-size: 0.875rem;
+  line-height: 1.1rem;
+}
+
+.img__text .text p {
+  font-size: 0.75rem;
+  line-height: 0.91rem;
+  color: var(--secundary-text);
+}
+
+.user button {
+  background-color: transparent;
+  width: 9.625rem;
+  border: 1px solid;
+  border-radius: 1rem;
+  padding: 0.438rem 1rem;
+  margin-left: 3.375rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.1rem;
+  cursor: pointer;
+}
+
+.user .connect {
+  width: 6.25rem;
 }
